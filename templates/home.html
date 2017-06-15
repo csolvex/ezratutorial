@@ -1,0 +1,23 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Home</title>
+        
+         <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,600,700,900" rel="stylesheet">  <!--  font-family: 'Nunito', sans-serif;   -->
+    </head>
+    
+    <body>
+        <center>
+        <a href="new_post">Add New Post</a>
+            {% for post in posts %}
+                <h1>{{post.title}}</h1>
+                <h4>Posted at: {{post.date.strftime('%m/%d/%Y at %G:%I%p')}}</h4>
+                <p>{{post.text}}</p>
+                <p>{{post.user_name}}</p>
+                <br>
+                <br>
+            {% endfor %}
+        </center>
+    </body>
+</html>
